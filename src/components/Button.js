@@ -1,14 +1,16 @@
 import React from 'react';
 
-const Button = () => {
+const Button = ({onAdd,showAdd}) => {
 
-    const onClick = () => {
-        console.log('Click')
-    }
 
     return (
         <div>
-            <button onClick={onClick} className='btn'>Add</button>
+            <button
+                style={{background: showAdd?'red':'green'}}
+                onClick={onAdd}
+                className='btn'>
+                {showAdd?'Close':'Add'}
+            </button>
         </div>
     );
 };

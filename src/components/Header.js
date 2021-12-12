@@ -1,13 +1,21 @@
 import Button from "./Button";
+import { useLocation } from "react-router-dom";
 
-const Header = () => {
+const Header = ({onAdd,showAdd}) => {
+
+    const location = useLocation()
 
     return (
 
         <header className='header'>
 
             <h1>Task tracker</h1>
-            <Button/>
+
+            { location.pathname === '/' && <Button
+                showAdd={showAdd}
+                onAdd={onAdd}
+            />
+            }
 
         </header>
     );
